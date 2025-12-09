@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"unicode"
+
+	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -41,7 +42,7 @@ func main() {
 	var nonPrint []rune
 
 	for _, ch := range Text {
-		if !unicode.IsPrint(ch) {
+		if ch < 32 || ch > 126 {
 			nonPrint = append(nonPrint, ch)
 		} else {
 			newText += string(ch)
@@ -87,7 +88,7 @@ func main() {
 
 		fmt.Print("Non-Printable characters: \n")
 		for i, v := range nonPrint {
-			fmt.Print(v)
+			z01.PrintRune(v)
 
 			if i != len(nonPrint)-1 {
 				fmt.Print(", ")
