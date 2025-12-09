@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"asciiArt/internal/ascii"
+	"asciiArt/internal"
 )
 
 func TestGenerateArt(t *testing.T) {
@@ -174,7 +174,7 @@ func TestGenerateArt(t *testing.T) {
 				}
 			}
 
-			got := ascii.GenerateArt(tt.text, lines)
+			got := internal.GenerateArt(tt.text, lines)
 			if got != expected {
 				t.Errorf("GenerateArt() = \n%q\nwant \n%q", got, expected)
 			}

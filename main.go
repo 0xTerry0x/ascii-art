@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"asciiArt/internal/ascii"
+	"asciiArt/internal"
 )
 
 func main() {
@@ -62,7 +62,7 @@ func main() {
 		lines = append(lines, scanner.Text())
 	}
 
-	output := ascii.GenerateArt(newText, lines)
+	output := internal.GenerateArt(newText, lines)
 	fmt.Print(output)
 
 	if len(indexes) > 0 {

@@ -1,21 +1,17 @@
 package internal
 
-import (
-	"fmt"
-	"strings"
-)
+import "strings"
 
-func PrintAscii(text string, lines []string, indexes []int) {
+func GenerateArt(text string, lines []string) string {
 	charHeight := 9
-
+	var sb strings.Builder
 	inputLines := strings.SplitSeq(text, "\\n")
 
 	for line := range inputLines {
 		if line == "" {
-			fmt.Println()
+			sb.WriteByte('\n')
 			continue
 		}
-
 		for row := 0; row < charHeight-1; row++ {
 			for _, ch := range line {
 				value := int(ch)
@@ -24,20 +20,12 @@ func PrintAscii(text string, lines []string, indexes []int) {
 				}
 
 				blockStart := (value - 32) * charHeight
-				fmt.Print(lines[blockStart+row])
+				if blockStart+row < len(lines) {
+					sb.WriteString(lines[blockStart+row])
+				}
 			}
-			fmt.Println()
+			sb.WriteByte('\n')
 		}
 	}
-
-	if len(indexes) > 0 {
-		fmt.Println("Non-Printable characters:")
-		for i, v := range indexes {
-			if i > 0 {
-				fmt.Print(", ")
-			}
-			fmt.Print(v)
-		}
-		fmt.Println()
-	}
+	return sb.String()
 }
