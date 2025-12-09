@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"unicode"
 )
 
 func main() {
@@ -36,6 +37,16 @@ func main() {
 		}
 	}
 
+	newText := ""
+
+	for _, ch := range Text {
+		if !unicode.IsPrint(ch) {
+			break
+		} else {
+			newText += string(ch)
+		}
+	}
+
 	file, err := os.Open(inputFile)
 	if err != nil {
 		panic(err)
@@ -50,7 +61,7 @@ func main() {
 
 	charHeight := 9
 
-	inputLines := strings.SplitSeq(Text, "\\n")
+	inputLines := strings.SplitSeq(newText, "\\n")
 
 	for line := range inputLines {
 		if line == "" {
