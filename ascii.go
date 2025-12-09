@@ -29,4 +29,3 @@ func GenerateArt(text string, lines []string) string {
 	}
 	return sb.String()
 }
-
