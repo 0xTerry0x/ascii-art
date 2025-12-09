@@ -3,13 +3,13 @@
 
 <h2>A small Go program that converts text into ASCII-art using different banner styles.</h2>
 
-<h3>Usage:
+<h3>Usage:</h3>
 
 ```
 go run . "<text>" [style]
 ```
 
-Examples:
+<h3>Examples:</h3>
 
 ```
 go run . "Hello"
@@ -18,51 +18,53 @@ go run . "Hello" --shadow
 go run . "Hello" --thinkertoy
 ```
 
-🎨 Styles
+<h3>🎨 Styles
 
-Use one of the following:
+Use one of the following:</h3>
 
 
---standard (default)
+<h2>--standard (default)
 
 --shadow
 
---thinkertoy
+--thinkertoy</h2>
 
 
-If no style is provided, standard is used.
+<h3>If no style is provided, standard is used.
 
 
-📏 Supported Characters
+📏 Supported Characters</h3>
 
-The program supports printable ASCII characters (32–126).
+<h2>The program supports printable ASCII characters (32–126).
 
 Anything outside that range (non-printable or non-ASCII) is:
 
-skipped during rendering, and their indexes are listed at the end.
+skipped during rendering, and their indexes are listed at the end.</h2>
 
 
 
-🔄 Newlines
+<h3>🔄 Newlines</h3>
 
-To print multiple lines, include the literal sequence:
+<h2>To print multiple lines, include the literal sequence:</h2>
 
+```
 \n
+```
 
 
-Example:
+<h3>Example:</h3>
 
 ```
 go run . "Hello\nWorld"
 ```
 
 
-⚠️ Errors
+<h3>⚠️ Errors
 
-You may see error messages for:
+You may see error messages for:</h3>
 
-missing text argument
+<h2>missing text argument
 
 invalid style
 
-empty text input
+empty text input</h2>
