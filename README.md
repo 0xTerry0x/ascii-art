@@ -74,7 +74,7 @@ If no style is provided, <b>standard</b> is used.
 
 ---
 
-<h2>🔤 Supported Characters</h2>
+<h2> Supported Characters</h2>
 
 The program supports all printable ASCII characters
 (ASCII codes <b>32–126</b>).
@@ -86,7 +86,7 @@ Non-printable or out-of-range characters are:
 
 ---
 
-<h2>🔄 Newlines</h2>
+<h2> Newlines</h2>
 
 To print multiple lines, include the literal sequence:
 
