@@ -39,12 +39,14 @@ func main() {
 	newText := ""
 	var indexes []int
 
-	for i, ch := range Text {
+	runeIndex := 0
+	for _, ch := range Text {
 		if ch < 32 || ch > 126 {
-			indexes = append(indexes, i)
+			indexes = append(indexes, runeIndex)
 		} else {
 			newText += string(ch)
 		}
+		runeIndex++
 	}
 
 	file, err := os.Open(inputFile)
