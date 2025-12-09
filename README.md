@@ -27,25 +27,21 @@ Use one of the following:
 
 <h2>
 
---standard (default)
+• standard (default)
+
+• shadow
+
+• thinkertoy
 
 
---shadow
-
-
---thinkertoy
+If no style is provided, standard is used.
 
 </h2>
 
 
-<h3>
-
-If no style is provided, standard is used.
+<h3>📏 Supported Characters</h3>
 
 
-📏 Supported Characters
-
-</h3>
 
 <h2>
 
@@ -79,21 +75,22 @@ go run . "Hello\nWorld"
 ```
 
 
-<h3>
-
-⚠️ Errors
 
 
-You may see error messages for:
+<h3>⚠️ Errors </h3>
 
-</h3>
 
-<h2>
+<h2>You may see error messages for:
+
+
+
+
 
 missing text argument
 
 invalid style
 
 empty text input
+
 
 </h2>
