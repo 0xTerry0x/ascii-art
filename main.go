@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+
+	"asciiArt/internal/ascii"
 )
 
 func main() {
@@ -60,7 +62,7 @@ func main() {
 		lines = append(lines, scanner.Text())
 	}
 
-	output := GenerateArt(newText, lines)
+	output := ascii.GenerateArt(newText, lines)
 	fmt.Print(output)
 
 	if len(indexes) > 0 {
