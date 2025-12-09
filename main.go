@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strings"
 )
 
 func main() {
@@ -61,28 +60,8 @@ func main() {
 		lines = append(lines, scanner.Text())
 	}
 
-	charHeight := 9
-
-	inputLines := strings.SplitSeq(newText, "\\n")
-
-	for line := range inputLines {
-		if line == "" {
-			fmt.Println()
-			continue
-		}
-		for row := 0; row < charHeight-1; row++ {
-			for _, ch := range line {
-				value := int(ch)
-				if value < 32 || value > 126 {
-					continue
-				}
-
-				blockStart := (value - 32) * charHeight
-				fmt.Print(lines[blockStart+row])
-			}
-			fmt.Println()
-		}
-	}
+	output := GenerateArt(newText, lines)
+	fmt.Print(output)
 
 	if len(indexes) > 0 {
 
