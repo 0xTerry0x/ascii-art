@@ -1,15 +1,20 @@
-<h1>ASCII-ART</h1>
+<h1 align="center">🎨 ASCII-ART</h1>
 
+<h3 align="center">A small Go program that converts text into ASCII-art using different banner styles.</h3>
 
-<h2>A small Go program that converts text into ASCII-art using different banner styles.</h2>
+---
 
-<h3>Usage:</h3>
+<h2> Usage</h2>
 
 ```
 go run . "<text>" [style]
 ```
 
-<h3>Examples:</h3>
+
+
+---
+
+<h2> Examples</h2>
 
 ```
 go run . "Hello"
@@ -18,57 +23,45 @@ go run . "Hello" --shadow
 go run . "Hello" --thinkertoy
 ```
 
-<h3>🎨 Styles </h3>
 
+---
 
+<h2> Styles</h2>
 
-Use one of the following:
+Available banner styles:
 
+<ul>
+  <li><b>standard</b> (default)</li>
+  <li><b>shadow</b></li>
+  <li><b>thinkertoy</b></li>
+</ul>
 
-<h2>
+If no style is provided, <b>standard</b> is used.
 
-• standard (default)
+---
 
-• shadow
+<h2>🔤 Supported Characters</h2>
 
-• thinkertoy
+The program supports all printable ASCII characters
+(ASCII codes <b>32–126</b>).
 
+Non-printable or out-of-range characters are:
 
-If no style is provided, standard is used.
+- skipped during rendering
+- and their indexes are printed at the end
 
-</h2>
+---
 
+<h2>🔄 Newlines</h2>
 
-<h3>📏 Supported Characters</h3>
-
-
-
-<h2>
-
-The program supports printable ASCII characters (32–126).
-
-
-Anything outside that range (non-printable or non-ASCII) is:
-
-
-skipped during rendering, and their indexes are listed at the end.
-
-</h2>
-
-
-
-<h3>🔄 Newlines</h3>
-
-
-<h2>To print multiple lines, include the literal sequence:</h2>
-
+To print multiple lines, include the literal sequence:
 
 ```
 \n
 ```
 
 
-<h3>Example:</h3>
+Example:
 
 ```
 go run . "Hello\nWorld"
@@ -76,21 +69,17 @@ go run . "Hello\nWorld"
 
 
 
+---
 
-<h3>⚠️ Errors </h3>
+<h2>⚠️ Error Handling</h2>
 
+Errors may occur for:
 
-<h2>You may see error messages for:
+- empty text argument
+- invalid style
+- missing input
 
-
-
-
-
-missing text argument
-
-invalid style
-
-empty text input
+---
 
 
-</h2>
+<h4 align="center"></h4>
