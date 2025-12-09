@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-
-	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -39,11 +37,11 @@ func main() {
 	}
 
 	newText := ""
-	var nonPrint []rune
+	var indexes []int
 
-	for _, ch := range Text {
+	for i, ch := range Text {
 		if ch < 32 || ch > 126 {
-			nonPrint = append(nonPrint, ch)
+			indexes = append(indexes, i)
 		} else {
 			newText += string(ch)
 		}
@@ -84,14 +82,16 @@ func main() {
 		}
 	}
 
-	if len(nonPrint) > 0 {
+	if len(indexes) > 0 {
 
 		fmt.Print("Non-Printable characters: \n")
-		for i, v := range nonPrint {
-			z01.PrintRune(v)
+		for i, v := range indexes {
+			fmt.Print(v)
 
-			if i != len(nonPrint)-1 {
+			if i != len(indexes)-1 {
 				fmt.Print(", ")
+			} else {
+				fmt.Println()
 			}
 
 		}
