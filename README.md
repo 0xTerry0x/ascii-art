@@ -18,10 +18,11 @@ go run . "Hello" --shadow
 go run . "Hello" --thinkertoy
 ```
 
-<h3>🎨 Styles
+<h3>🎨 Styles </h3>
 
 
-Use one of the following:</h3>
+
+Use one of the following:
 
 
 <h2>
