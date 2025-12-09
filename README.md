@@ -15,7 +15,7 @@ cd cmd
 And then run:
 
 ```
-go run . "<text>" [style]
+go run . "<text>" --[style]
 ```
 
 
