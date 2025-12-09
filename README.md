@@ -6,6 +6,14 @@
 
 <h2> Usage</h2>
 
+First enter the cmd folder using:
+
+```
+cd cmd
+```
+
+And then run:
+
 ```
 go run . "<text>" [style]
 ```
@@ -123,6 +131,14 @@ Errors may occur for:
 - missing input
 
 ---
+
+<h2>Testing</h2>
+
+To run the unit tests, run:
+
+```
+go test -v
+```
 
 
 <h4 align="center"></h4>
