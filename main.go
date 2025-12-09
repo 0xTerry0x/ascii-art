@@ -38,10 +38,11 @@ func main() {
 	}
 
 	newText := ""
+	var nonPrint []rune
 
 	for _, ch := range Text {
 		if !unicode.IsPrint(ch) {
-			break
+			nonPrint = append(nonPrint, ch)
 		} else {
 			newText += string(ch)
 		}
@@ -79,6 +80,19 @@ func main() {
 				fmt.Print(lines[blockStart+row])
 			}
 			fmt.Println()
+		}
+	}
+
+	if len(nonPrint) > 0 {
+
+		fmt.Print("Non-Printable characters: \n")
+		for i, v := range nonPrint {
+			fmt.Print(v)
+
+			if i != len(nonPrint)-1 {
+				fmt.Print(", ")
+			}
+
 		}
 	}
 }
