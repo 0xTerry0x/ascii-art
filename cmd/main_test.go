@@ -121,34 +121,11 @@ func TestGenerateArt(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			lines := createMockLines(tt.patterns)
 
-			// Construct expected output programmatically
-			// We must mimic the logic of splitting by \n
 			expected := ""
+			
+			Input string in the test case mimics what `ascii.go` receives.
 
-			// Handle literal newline chars if that's what input is
-			// The original code uses strings.SplitSeq(text, "\\n")
-			// If the input string contains ACTUAL newlines (rune 10), SplitSeq("\\n") won't split them unless they are escaped.
-			// Wait, let's look at ascii.go again.
-			// inputLines := strings.SplitSeq(text, "\\n")
-			// This expects literal backslash+n.
-
-			// If the input is "Hello\n\nThere" (with real newlines), SplitSeq wont split it.
-			// BUT, usually in these projects, the input args from command line might come in as "Hello\nThere"
-			// where \n is a single character? Or as "Hello\\nThere"?
-
-			// The user ran: go run . "Hello\n\nThere" in PowerShell.
-			// PowerShell passes \n as literal newlines usually? Or does it escape them?
-			// The output shows it working, which means the program IS splitting them.
-
-			// If the program splits by "\\n", then the input string MUST contain literal backslash followed by n.
-			// However, if the user input "Hello\n\nThere" in Go string literal syntax, that is ACTUAL newlines.
-
-			// Let's adjust the mock logic to split by newlines for the expected generation
-			// assuming the Input string in the test case mimics what `ascii.go` receives.
-
-			// We will replicate the split logic from ascii.go partially to build expectation.
 			parts := strings.Split(tt.text, "\\n")
-			// If the test case uses actual newlines, we might need to replace them with \\n first or just split by \n
 			if strings.Contains(tt.text, "\n") {
 				parts = strings.Split(tt.text, "\n")
 			}
