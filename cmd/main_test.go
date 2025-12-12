@@ -122,8 +122,8 @@ func TestGenerateArt(t *testing.T) {
 			lines := createMockLines(tt.patterns)
 
 			expected := ""
-			
-			Input string in the test case mimics what `ascii.go` receives.
+
+			// Input string in the test case mimics what `ascii.go` receives.
 
 			parts := strings.Split(tt.text, "\\n")
 			if strings.Contains(tt.text, "\n") {
