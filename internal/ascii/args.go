@@ -1,4 +1,4 @@
-package internal
+package ascii
 
 import (
 	"os"
@@ -17,15 +17,15 @@ func GetArgs(args []string) (string, string) {
 		os.Exit(1)
 	}
 
-	inputFile := "../text/standard.txt"
+	inputFile := "internal/assets/standard.txt"
 	if len(args) == 2 {
 		switch args[1] {
 		case "--standard":
-			inputFile = "../text/standard.txt"
+			inputFile = "internal/assets/standard.txt"
 		case "--shadow":
-			inputFile = "../text/shadow.txt"
+			inputFile = "internal/assets/shadow.txt"
 		case "--thinkertoy":
-			inputFile = "../text/thinkertoy.txt"
+			inputFile = "internal/assets/thinkertoy.txt"
 		default:
 			fmt.Println("Invalid style argument")
 			os.Exit(1)
