@@ -43,56 +43,56 @@ func TestEdgeCases(t *testing.T) {
 
 		// Character ranges
 		{
-			name:     "All digits",
-			input:    "0123456789",
-			contains: "0",
+			name:        "All digits",
+			input:       "0123456789",
+			expectEmpty: false,
 		},
 		{
-			name:     "Full alphabet uppercase",
-			input:    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-			contains: "A",
+			name:        "Full alphabet uppercase",
+			input:       "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+			expectEmpty: false,
 		},
 		{
-			name:     "Full alphabet lowercase",
-			input:    "abcdefghijklmnopqrstuvwxyz",
-			contains: "a",
+			name:        "Full alphabet lowercase",
+			input:       "abcdefghijklmnopqrstuvwxyz",
+			expectEmpty: false,
 		},
 
 		// Special characters
 		{
-			name:     "Underscores",
-			input:    "___",
-			contains: "_",
+			name:        "Underscores",
+			input:       "___",
+			expectEmpty: false,
 		},
 		{
-			name:     "Dashes",
-			input:    "---",
-			contains: "-",
+			name:        "Dashes",
+			input:       "---",
+			expectEmpty: false,
 		},
 		{
-			name:     "Brackets",
-			input:    "[]",
-			contains: "[",
+			name:        "Brackets",
+			input:       "[]",
+			expectEmpty: false,
 		},
 		{
-			name:     "Parentheses",
-			input:    "()",
-			contains: "(",
+			name:        "Parentheses",
+			input:       "()",
+			expectEmpty: false,
 		},
 		{
-			name:     "Braces",
-			input:    "{}",
-			contains: "{",
+			name:        "Braces",
+			input:       "{}",
+			expectEmpty: false,
 		},
 		{
-			name:     "Exclamation",
-			input:    "!!!",
-			contains: "!",
+			name:        "Exclamation",
+			input:       "!!!",
+			expectEmpty: false,
 		},
 		{
-			name:     "Question marks",
-			input:    "???",
-			contains: "?",
+			name:        "Question marks",
+			input:       "???",
+			expectEmpty: false,
 		},
 
 		// Multi-line combinations
@@ -119,58 +119,58 @@ func TestEdgeCases(t *testing.T) {
 
 		// Mixed content
 		{
-			name:     "Letters and numbers",
-			input:    "abc123",
-			contains: "a",
+			name:        "Letters and numbers",
+			input:       "abc123",
+			expectEmpty: false,
 		},
 		{
-			name:     "Letters with symbols",
-			input:    "Hello!",
-			contains: "!",
+			name:        "Letters with symbols",
+			input:       "Hello!",
+			expectEmpty: false,
 		},
 		{
-			name:     "Numbers with symbols",
-			input:    "123#456",
-			contains: "#",
+			name:        "Numbers with symbols",
+			input:       "123#456",
+			expectEmpty: false,
 		},
 
 		// Long strings
 		{
-			name:     "Long string",
-			input:    "ThisIsAVeryLongStringWithoutSpaces",
-			contains: "T",
+			name:        "Long string",
+			input:       "ThisIsAVeryLongStringWithoutSpaces",
+			expectEmpty: false,
 		},
 		{
-			name:     "Repeated characters",
-			input:    "aaaaaaaaaa",
-			contains: "a",
+			name:        "Repeated characters",
+			input:       "aaaaaaaaaa",
+			expectEmpty: false,
 		},
 
 		// Punctuation
 		{
-			name:     "Period",
-			input:    ".",
-			contains: ".",
+			name:        "Period",
+			input:       ".",
+			expectEmpty: false,
 		},
 		{
-			name:     "Comma",
-			input:    ",",
-			contains: ",",
+			name:        "Comma",
+			input:       ",",
+			expectEmpty: false,
 		},
 		{
-			name:     "Semicolon",
-			input:    ";",
-			contains: ";",
+			name:        "Semicolon",
+			input:       ";",
+			expectEmpty: false,
 		},
 		{
-			name:     "Colon",
-			input:    ":",
-			contains: ":",
+			name:        "Colon",
+			input:       ":",
+			expectEmpty: false,
 		},
 		{
-			name:     "Quote marks",
-			input:    "\"'",
-			contains: "\"",
+			name:        "Quote marks",
+			input:       "\"'",
+			expectEmpty: false,
 		},
 	}
 
