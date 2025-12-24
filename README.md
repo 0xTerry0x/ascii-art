@@ -154,8 +154,6 @@ ascii-art/
 │       ├── standard.txt
 │       ├── shadow.txt
 │       └── thinkertoy.txt
-├── docs/                   # Documentation
-│   └── index.html
 ├── main_test.go            # Integration tests
 ├── edge_cases_test.go      # Edge case tests
 ├── Makefile                # Build automation
