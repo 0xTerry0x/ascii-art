@@ -139,23 +139,31 @@ Errors may occur for:
 
 ```
 ascii-art/
-├── cmd/ascii-art/       # Main application entry point
+├── cmd/ascii-art/          # Main application entry point
 │   └── main.go
-├── internal/ascii/      # Core ASCII art logic
-│   ├── ascii.go         # Art generation
-│   ├── args.go          # Argument parsing
-│   ├── filter.go        # Character validation
-│   ├── printer.go       # Output formatting
-│   ├── read-file.go     # Banner file loading
-│   ├── art_test.go      # Unit tests
-│   └── banner_test.go   # Banner loading tests
-├── internal/assets/     # Banner font files
-│   ├── standard.txt
-│   ├── shadow.txt
-│   └── thinkertoy.txt
-├── main_test.go         # Integration tests
-├── edge_cases_test.go   # Edge case tests
-└── CHANGELOG.md         # Version history
+├── internal/
+│   ├── ascii/              # Core ASCII art logic
+│   │   ├── ascii.go        # Art generation
+│   │   ├── args.go         # Argument parsing
+│   │   ├── filter.go       # Character validation
+│   │   ├── printer.go      # Output formatting
+│   │   ├── read-file.go    # Banner file loading
+│   │   ├── art_test.go     # Unit tests for art generation
+│   │   └── banner_test.go  # Banner loading tests
+│   └── assets/             # Banner font files
+│       ├── standard.txt
+│       ├── shadow.txt
+│       └── thinkertoy.txt
+├── docs/                   # Documentation
+│   └── index.html
+├── main_test.go            # Integration tests
+├── edge_cases_test.go      # Edge case tests
+├── Makefile                # Build automation
+├── go.mod                  # Go module definition
+├── README.md               # Project documentation
+├── CHANGELOG.md            # Version history
+├── CONTRIBUTING.md         # Contribution guidelines
+└── LICENSE                 # MIT License
 ```
 
 ---
@@ -181,5 +189,3 @@ go test -v -run TestMain
 go test -v -run TestEdge
 ```
 
-
-<h4 align="center"></h4>
