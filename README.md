@@ -6,16 +6,19 @@
 
 <h2> Usage</h2>
 
-First enter the cmd folder using:
+### Quick Start
 
-```
-cd cmd
+Run directly from the project root:
+
+```bash
+go run ./cmd/ascii-art "<text>" --[style]
 ```
 
-And then run:
+Or build the binary first:
 
-```
-go run . "<text>" --[style]
+```bash
+go build ./cmd/ascii-art
+./ascii-art "<text>" --[style]
 ```
 
 
@@ -24,8 +27,8 @@ go run . "<text>" --[style]
 
 <h2> Examples</h2>
 
-```
-go run . "Hello"
+```bash
+go run ./cmd/ascii-art "Hello"
 
 
  _    _          _   _
@@ -38,7 +41,7 @@ go run . "Hello"
 
 
 
-go run . "Hello" --shadow
+go run ./cmd/ascii-art "Hello" --shadow
 
 _|    _|          _| _|
 _|    _|   _|_|   _| _|   _|_|
@@ -47,7 +50,7 @@ _|    _| _|       _| _| _|    _|
 _|    _|   _|_|_| _| _|   _|_|
 
 
-go run . "Hello" --thinkertoy
+go run ./cmd/ascii-art "Hello" --thinkertoy
 
 o  o     o o
 |  |     | |
@@ -98,7 +101,7 @@ To print multiple lines, include the literal sequence:
 Example:
 
 ```
-go run . "Hello\nWorld"
+go run ./cmd/ascii-art "Hello\nWorld"
 
  _    _          _   _
 | |  | |        | | | |
@@ -132,12 +135,50 @@ Errors may occur for:
 
 ---
 
-<h2>Testing</h2>
-
-To run the unit tests, run:
+<h2>Project Structure</h2>
 
 ```
-go test -v
+ascii-art/
+├── cmd/ascii-art/       # Main application entry point
+│   └── main.go
+├── internal/ascii/      # Core ASCII art logic
+│   ├── ascii.go         # Art generation
+│   ├── args.go          # Argument parsing
+│   ├── filter.go        # Character validation
+│   ├── printer.go       # Output formatting
+│   ├── read-file.go     # Banner file loading
+│   ├── art_test.go      # Unit tests
+│   └── banner_test.go   # Banner loading tests
+├── internal/assets/     # Banner font files
+│   ├── standard.txt
+│   ├── shadow.txt
+│   └── thinkertoy.txt
+├── main_test.go         # Integration tests
+├── edge_cases_test.go   # Edge case tests
+└── CHANGELOG.md         # Version history
+```
+
+---
+
+<h2>Testing</h2>
+
+Run all tests:
+
+```bash
+go test ./...
+```
+
+Run specific test suites:
+
+```bash
+# Unit tests for internal package
+go test ./internal/ascii -v
+
+# Integration tests
+go test -v -run TestMain
+
+# Edge case tests
+go test -v -run TestEdge
 ```
 
 

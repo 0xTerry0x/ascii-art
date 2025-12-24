@@ -1,10 +1,10 @@
-package main
+package ascii_test
 
 import (
 	"strings"
 	"testing"
 
-	"asciiArt/internal"
+	"asciiArt/internal/ascii"
 )
 
 func TestGenerateArt(t *testing.T) {
@@ -151,7 +151,7 @@ func TestGenerateArt(t *testing.T) {
 				}
 			}
 
-			got := internal.GenerateArt(tt.text, lines)
+			got := ascii.GenerateArt(tt.text, lines)
 			if got != expected {
 				t.Errorf("GenerateArt() = \n%q\nwant \n%q", got, expected)
 			}
